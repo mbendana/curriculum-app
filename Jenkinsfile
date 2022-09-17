@@ -1,10 +1,5 @@
 pipeline {
-  agent {
-    node {
-      label 'builtin'
-    }
-
-  }
+  agent any
   stages {
     stage('Checkout Code') {
       steps {
