@@ -35,20 +35,5 @@ pipeline {
       }
     }
 
-    stage('Install') {
-      steps {
-        echo 'Installing'
-        sh 'npm install'
-      }
-    }
-    
-    stage('Package') {
-      steps {
-        echo 'Packaging'
-        sh 'npm package'
-        archiveArtifacts(artifacts: '**/target/*.js', fingerprint: true)
-      }
-    }
-    
   }
 }
