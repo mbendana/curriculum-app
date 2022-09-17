@@ -35,5 +35,13 @@ pipeline {
       }
     }
 
+    stage('Package') {
+      steps {
+        echo 'Packaging'
+        sh 'npm package'
+        archiveArtifacts(artifacts: '**/target/*.js', fingerprint: true)
+      }
+    }
+
   }
 }
